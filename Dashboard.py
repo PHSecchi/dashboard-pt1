@@ -1,11 +1,11 @@
 import os
+import pwd
 
 dados_CPU = ""
 with open('/proc/cpuinfo', 'r') as arquivo:
     info_CPU = arquivo.readlines()
 
-    #print(info_CPU)
-
+    #Carrega as informacoes gerais sobre o processador
     modelo = info_CPU[4].split('\t')[1].split(' ',1)[1].strip()
     cores = info_CPU[12].split('\t')[1].split(' ')[1].strip()
     threads = info_CPU[10].split('\t')[1].split(' ')[1].strip()
@@ -18,6 +18,8 @@ with open('/proc/cpuinfo', 'r') as arquivo:
  
 CPU_stat = []
 i=0
+
+#Carrega as informacoes sobre o tempo do processador
 with open('/proc/stat', 'r') as arquivo:
     while i < int(threads) + 1 :
         CPU_stat.append(arquivo.readline())
@@ -34,15 +36,11 @@ with open('/proc/stat', 'r') as arquivo:
         print(CPU_stat[i])
         i += 1
 
-    print(CPU_stat[0])
-
 # Carrega todos os diretorios que tem como nome um numero inteiro, ou seja, sao diretorios de processos
 processos = []
 for p in os.listdir('/proc'):
     if p.isdigit():
         processos.append(p)
-
-print(processos)
 
 dados_processos = ""
 
@@ -50,16 +48,25 @@ dados_processos = ""
 for id_proc in processos:
     with open(f"/proc/{id_proc}/status", 'r') as arquivo:
         status = arquivo.readlines()
-
-    pid = status[5].split('\t')[1].strip()
-    ppid = status[6].split('\t')[1].strip()
-    name = status[0].split('\t')[1].strip()
-    mem = status[18].split('\t')[1].strip() #VmSIZE
-    trd = status[35].split('\t')[1].strip() 
+        memo = 0
+    for s in status:
+        if (s.split('\t')[0].strip()) == 'Pid:':
+            pid = s.split('\t')[1].strip() 
+        if (s.split('\t')[0].strip()) == 'PPid:':
+            ppid = s.split('\t')[1].strip() 
+        if (s.split('\t')[0].strip()) == 'Name:':
+            name = s.split('\t')[1].strip() 
+        if (s.split('\t')[0].strip()) == 'VmSize:':
+            memo = s.split('\t')[1].strip() 
+        if (s.split('\t')[0].strip()) == 'Threads:':
+            trd = s.split('\t')[1].strip() 
+        if (s.split('\t')[0].strip()) == 'Uid:':
+            uid = s.split('\t')[1].strip() 
+    
+    user = pwd.getpwuid(int(uid)).pw_name
 
     #Monta uma string e concatena com as informacoes dos demais processos
-    proc = f"PID: {pid} PPID: {ppid} Nome: {name} Uso de memória: {mem} Quantidade de Threads: {trd}\n"
-
+    proc = f"PID: {pid} PPID: {ppid} Nome: {name} Ususario: {user} Uso de memória: {memo} Quantidade de Threads: {trd}\n"
     dados_processos += proc
 
 # Mostra as informações dos processos na tela
