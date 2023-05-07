@@ -1,10 +1,13 @@
 <ion-content>
-
   <ion-card color="dark">
     <ion-card-header>
       <ion-card-title>Dashboard</ion-card-title>
       <ion-card-subtitle>Gerenciador de processos e desempenho</ion-card-subtitle>
     </ion-card-header>
+
+
+<div style="display: flex">
+    <!-- Propriedades -->
 <div style=" height: 90%; width:30%">
     <ion-card color="light">
       <ion-card-header>
@@ -46,59 +49,54 @@
       </ion-card-content>
     </ion-card>
     </div>
-
-    <div style=" height: 30%; width:30%">
-    <ion-card color="light">
-      <ion-card-header>
-        <ion-card-title>CPU</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content>
-        
-      </ion-card-content>
-    </ion-card>
+    <div style="display: flex; flex-direction: column; width: 70%;">
+    <div style="display: flex; justify-content: space-between;">
+      <div style=" height: 30%; width: 30%;">
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>CPU</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div style=" height: 30%; width: 30%;">
+        <ion-card color="light">
+          <ion-card-header>
+            <ion-card-title>Memória</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div style=" height: 30%; width: 30%;">
+          <ion-card color="light">
+            <ion-card-header>
+              <ion-card-title>Disco</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+            </ion-card-content>
+          </ion-card>
+      </div>
+    </div>
+    <div style="width:100%">
+        <ion-card style="height: 100%;" color="light">
+          <ion-card-content>
+            <ion-list>
+              <ion-item color="light">
+                <ion-label>Processo 1</ion-label>
+              </ion-item>
+              <ion-item color="light">
+                <ion-label>Processo 2</ion-label>
+              </ion-item >
+              <ion-item color="light">
+                <ion-label>Processo 3</ion-label>
+              </ion-item>
+          </ion-list>
+          </ion-card-content>
+        </ion-card>
+    </div>
   </div>
-
-  <div style=" height: 30%; width:30%">
-    <ion-card color="light">
-      <ion-card-header>
-        <ion-card-title>Memória</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-      </ion-card-content>
-    </ion-card>
 </div>
-
-<div style=" height: 30%; width:30%">
-    <ion-card color="light">
-      <ion-card-header>
-        <ion-card-title>Disco</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content>
-       
-      </ion-card-content>
-    </ion-card>
-</div>
-
-<div style=" height: 65%; width:65%">
-    <ion-card color="light">
-
-      <ion-card-content>
-        <ion-list>
-          <ion-item color="light">
-            <ion-label>Processo 1</ion-label>
-          </ion-item>
-          <ion-item color="light">
-            <ion-label>Processo 2</ion-label>
-          </ion-item >
-          <ion-item color="light">
-            <ion-label>Processo 3</ion-label>
-          </ion-item>
-      </ion-list>
-      </ion-card-content>
-    </ion-card>
-</div>
-
   </ion-card>
 </ion-content>
