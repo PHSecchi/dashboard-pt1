@@ -8,12 +8,17 @@ import { PrincipalPageRoutingModule } from './principal-routing.module';
 
 import { PrincipalPage } from './principal.page';
 
+import { NgxEchartsModule } from 'ngx-echarts';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PrincipalPageRoutingModule
+    PrincipalPageRoutingModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    })
   ],
   declarations: [PrincipalPage]
 })
