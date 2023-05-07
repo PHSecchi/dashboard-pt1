@@ -13,6 +13,8 @@ app = Flask(__name__)
 #app.run(port = 5000)
 CORS(app)
 #obj = json.loads(i)
+with open('teste.json', 'w') as myfile:
+    json.dump(i , myfile)
 
 
 @app.route("/")
