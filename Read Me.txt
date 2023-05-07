@@ -1,0 +1,23 @@
+Para rodar o front:
+
+Instalar o ionic:
+
+1. 
+Instalar o node
+
+2. 
+npm install -g @ionic/cli
+
+ionic start dashboard-app
+
+cd dashboard app
+
+rodar o ionic:
+
+ionic serve
+
+3.
+para usar o echarts:
+
+npm install echarts -S
+npm install ngx-echarts -S
