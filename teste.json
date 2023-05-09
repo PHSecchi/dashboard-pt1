@@ -1,2 +1,4 @@
-{ "nome" : "Franziska Romani Furtado",
-    "numero" : 123}
+{"teste": [{ "nome" : "Franziska Romani Furtado",
+    "numero" : 123},
+{ "nome" : "Pedro H Secchi",
+    "numero" : 456}]}
