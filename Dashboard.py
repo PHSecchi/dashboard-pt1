@@ -4,6 +4,12 @@ import threading
 import time
 import json
 
+def aquisicao_hostname():
+    with open('/proc/sys/kernel/hostname', 'r') as arquivo:
+        hostname = arquivo.read().strip()
+    
+    return {"Hostname": hostname}
+
 def aquisicao_dados_cpu():
     
     with open('/proc/cpuinfo', 'r') as arquivo:
@@ -33,19 +39,19 @@ def aquisicao_dados_cpu():
             tempos = []
             k = 1
             while k < 11:
-                tempos.append(CPU_stat[i].split(' ')[k+j])
+                tempos.append(CPU_stat[i].split(' ')[k+j].strip())
                 k += 1
 
-            t_cpu.append({"t_user1":tempos[0],
-                          "t_user2":tempos[1],
-                          "t_system":tempos[2],
-                          "t_ocioso":tempos[3],
-                          "t_i/o_wait":tempos[4],
-                          "t_inthard":tempos[5],
-                          "t_intsoft":tempos[6],
-                          "t_virt":tempos[7],
-                          "t_virt1cpu":tempos[8],
-                          "t_energ":tempos[9]})
+            t_cpu.append({"t_user1":int(tempos[0]),
+                          "t_user2":int(tempos[1]),
+                          "t_system":int(tempos[2]),
+                          "t_ocioso":int(tempos[3]),
+                          "t_i/o_wait":int(tempos[4]),
+                          "t_inthard":int(tempos[5]),
+                          "t_intsoft":int(tempos[6]),
+                          "t_virt":int(tempos[7]),
+                          "t_virt1cpu":int(tempos[8]),
+                          "t_energ":int(tempos[9])})
             i += 1
 
     dados_CPU = { "info_CPU" : cpu,
@@ -92,9 +98,10 @@ def aquisicao_dados_processos():
 
     return proc
 
-def printa_dados():
+def grava_dados():
     while True: 
-        Dados = {"CPU":aquisicao_dados_cpu(),
+        Dados = {"Hostname": aquisicao_hostname(),
+                 "CPU":aquisicao_dados_cpu(),
                  "Processos":aquisicao_dados_processos()}
         # Mostra as informações na tela
         #print(aquisicao_dados_processos())
@@ -102,9 +109,9 @@ def printa_dados():
         
         with open("Dados.json","w") as arquivo:
             json.dump(Dados,arquivo,indent= 4)
-        time.sleep(500)
+        time.sleep(5)
 
-thr_aq_dados = threading.Thread(target= printa_dados)
+thr_aq_dados = threading.Thread(target= grava_dados)
 
 
 thr_aq_dados.start()

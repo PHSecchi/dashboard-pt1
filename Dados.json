@@ -1,4 +1,7 @@
 {
+    "Hostname": {
+        "Hostname": "phsecchi-tp"
+    },
     "CPU": {
         "info_CPU": {
             "Modelo": "Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz",
@@ -7,64 +10,64 @@
         },
         "times_CPU": [
             {
-                "t_user1": "779596",
-                "t_user2": "136",
-                "t_system": "183813",
-                "t_ocioso": "8206780",
-                "t_i/o_wait": "6514",
-                "t_inthard": "0",
-                "t_intsoft": "3322",
-                "t_virt": "0",
-                "t_virt1cpu": "0",
-                "t_energ": "0\n"
+                "t_user1": 837927,
+                "t_user2": 137,
+                "t_system": 198934,
+                "t_ocioso": 10080240,
+                "t_i/o_wait": 6905,
+                "t_inthard": 0,
+                "t_intsoft": 3588,
+                "t_virt": 0,
+                "t_virt1cpu": 0,
+                "t_energ": 0
             },
             {
-                "t_user1": "198284",
-                "t_user2": "34",
-                "t_system": "47446",
-                "t_ocioso": "2724361",
-                "t_i/o_wait": "3007",
-                "t_inthard": "0",
-                "t_intsoft": "956",
-                "t_virt": "0",
-                "t_virt1cpu": "0",
-                "t_energ": "0\n"
+                "t_user1": 214062,
+                "t_user2": 34,
+                "t_system": 52422,
+                "t_ocioso": 3189681,
+                "t_i/o_wait": 3083,
+                "t_inthard": 0,
+                "t_intsoft": 988,
+                "t_virt": 0,
+                "t_virt1cpu": 0,
+                "t_energ": 0
             },
             {
-                "t_user1": "187692",
-                "t_user2": "40",
-                "t_system": "39816",
-                "t_ocioso": "1828809",
-                "t_i/o_wait": "1332",
-                "t_inthard": "0",
-                "t_intsoft": "65",
-                "t_virt": "0",
-                "t_virt1cpu": "0",
-                "t_energ": "0\n"
+                "t_user1": 201578,
+                "t_user2": 40,
+                "t_system": 43124,
+                "t_ocioso": 2298627,
+                "t_i/o_wait": 1541,
+                "t_inthard": 0,
+                "t_intsoft": 67,
+                "t_virt": 0,
+                "t_virt1cpu": 0,
+                "t_energ": 0
             },
             {
-                "t_user1": "192946",
-                "t_user2": "30",
-                "t_system": "43541",
-                "t_ocioso": "1825315",
-                "t_i/o_wait": "974",
-                "t_inthard": "0",
-                "t_intsoft": "42",
-                "t_virt": "0",
-                "t_virt1cpu": "0",
-                "t_energ": "0\n"
+                "t_user1": 207694,
+                "t_user2": 31,
+                "t_system": 47269,
+                "t_ocioso": 2293435,
+                "t_i/o_wait": 1037,
+                "t_inthard": 0,
+                "t_intsoft": 47,
+                "t_virt": 0,
+                "t_virt1cpu": 0,
+                "t_energ": 0
             },
             {
-                "t_user1": "200672",
-                "t_user2": "31",
-                "t_system": "53008",
-                "t_ocioso": "1828293",
-                "t_i/o_wait": "1199",
-                "t_inthard": "0",
-                "t_intsoft": "2258",
-                "t_virt": "0",
-                "t_virt1cpu": "0",
-                "t_energ": "0\n"
+                "t_user1": 214593,
+                "t_user2": 31,
+                "t_system": 56118,
+                "t_ocioso": 2298496,
+                "t_i/o_wait": 1243,
+                "t_inthard": 0,
+                "t_intsoft": 2485,
+                "t_virt": 0,
+                "t_virt1cpu": 0,
+                "t_energ": 0
             }
         ]
     },
@@ -376,7 +379,7 @@
         {
             "PID": "67",
             "PPID": "2",
-            "Nome": "kworker/2:1H-events_highpri",
+            "Nome": "kworker/2:1H-kblockd",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -408,7 +411,7 @@
         {
             "PID": "76",
             "PPID": "2",
-            "Nome": "kworker/1:1H-events_highpri",
+            "Nome": "kworker/1:1H-kblockd",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -448,7 +451,7 @@
         {
             "PID": "132",
             "PPID": "2",
-            "Nome": "kworker/0:1H-events_highpri",
+            "Nome": "kworker/0:1H-kblockd",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -778,7 +781,7 @@
             "PPID": "927",
             "Nome": "Xorg",
             "Ususario": "root",
-            "Memoria": "864048 kB",
+            "Memoria": "863916 kB",
             "Quantidade de Threads": "10"
         },
         {
@@ -1130,7 +1133,7 @@
             "PPID": "1586",
             "Nome": "cinnamon",
             "Ususario": "phsecchi",
-            "Memoria": "4431680 kB",
+            "Memoria": "4431548 kB",
             "Quantidade de Threads": "13"
         },
         {
@@ -1290,8 +1293,8 @@
             "PPID": "1588",
             "Nome": "firefox-bin",
             "Ususario": "phsecchi",
-            "Memoria": "12410524 kB",
-            "Quantidade de Threads": "126"
+            "Memoria": "12420184 kB",
+            "Quantidade de Threads": "124"
         },
         {
             "PID": "2390",
@@ -1299,7 +1302,7 @@
             "Nome": "xdg-desktop-por",
             "Ususario": "phsecchi",
             "Memoria": "621584 kB",
-            "Quantidade de Threads": "7"
+            "Quantidade de Threads": "6"
         },
         {
             "PID": "2394",
@@ -1307,7 +1310,7 @@
             "Nome": "xdg-document-po",
             "Ususario": "phsecchi",
             "Memoria": "528416 kB",
-            "Quantidade de Threads": "7"
+            "Quantidade de Threads": "6"
         },
         {
             "PID": "2397",
@@ -1362,7 +1365,7 @@
             "PPID": "2355",
             "Nome": "Privileged Cont",
             "Ususario": "phsecchi",
-            "Memoria": "2464260 kB",
+            "Memoria": "2467332 kB",
             "Quantidade de Threads": "19"
         },
         {
@@ -1386,7 +1389,7 @@
             "PPID": "2607",
             "Nome": "bash",
             "Ususario": "phsecchi",
-            "Memoria": "9696 kB",
+            "Memoria": "9836 kB",
             "Quantidade de Threads": "1"
         },
         {
@@ -1474,7 +1477,7 @@
             "PPID": "1588",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "1176506372 kB",
+            "Memoria": "1176505348 kB",
             "Quantidade de Threads": "30"
         },
         {
@@ -1514,8 +1517,8 @@
             "PPID": "5696",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "33967352 kB",
-            "Quantidade de Threads": "15"
+            "Memoria": "33966676 kB",
+            "Quantidade de Threads": "14"
         },
         {
             "PID": "5749",
@@ -1530,8 +1533,8 @@
             "PPID": "5699",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "1185794956 kB",
-            "Quantidade de Threads": "15"
+            "Memoria": "1184747536 kB",
+            "Quantidade de Threads": "12"
         },
         {
             "PID": "5808",
@@ -1562,8 +1565,8 @@
             "PPID": "5808",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "1176284520 kB",
-            "Quantidade de Threads": "14"
+            "Memoria": "1176292716 kB",
+            "Quantidade de Threads": "13"
         },
         {
             "PID": "5983",
@@ -1722,24 +1725,16 @@
             "PPID": "2355",
             "Nome": "Isolated Web Co",
             "Ususario": "phsecchi",
-            "Memoria": "2529892 kB",
-            "Quantidade de Threads": "22"
+            "Memoria": "2529748 kB",
+            "Quantidade de Threads": "20"
         },
         {
             "PID": "13169",
             "PPID": "2355",
             "Nome": "Isolated Web Co",
             "Ususario": "phsecchi",
-            "Memoria": "2663452 kB",
+            "Memoria": "2664476 kB",
             "Quantidade de Threads": "20"
-        },
-        {
-            "PID": "16252",
-            "PPID": "5874",
-            "Nome": "bash",
-            "Ususario": "phsecchi",
-            "Memoria": "9396 kB",
-            "Quantidade de Threads": "1"
         },
         {
             "PID": "16888",
@@ -1752,7 +1747,7 @@
         {
             "PID": "16953",
             "PPID": "2",
-            "Nome": "kworker/1:3-events",
+            "Nome": "kworker/1:3-mm_percpu_wq",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -1760,10 +1755,10 @@
         {
             "PID": "17924",
             "PPID": "2355",
-            "Nome": "Web Content",
+            "Nome": "Isolated Web Co",
             "Ususario": "phsecchi",
-            "Memoria": "2416888 kB",
-            "Quantidade de Threads": "15"
+            "Memoria": "2580580 kB",
+            "Quantidade de Threads": "19"
         },
         {
             "PID": "18003",
@@ -1784,7 +1779,7 @@
         {
             "PID": "19633",
             "PPID": "2",
-            "Nome": "kworker/0:1-events",
+            "Nome": "kworker/0:1-mm_percpu_wq",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -1798,33 +1793,9 @@
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "19879",
-            "PPID": "2",
-            "Nome": "kworker/u17:2-i915_flip",
-            "Ususario": "root",
-            "Memoria": 0,
-            "Quantidade de Threads": "1"
-        },
-        {
             "PID": "19939",
             "PPID": "2",
-            "Nome": "kworker/3:0-events",
-            "Ususario": "root",
-            "Memoria": 0,
-            "Quantidade de Threads": "1"
-        },
-        {
-            "PID": "19941",
-            "PPID": "2",
-            "Nome": "kworker/2:1-events",
-            "Ususario": "root",
-            "Memoria": 0,
-            "Quantidade de Threads": "1"
-        },
-        {
-            "PID": "19968",
-            "PPID": "2",
-            "Nome": "kworker/u16:3-i915",
+            "Nome": "kworker/3:0-mm_percpu_wq",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
@@ -1846,23 +1817,47 @@
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "20325",
+            "PID": "21705",
+            "PPID": "5874",
+            "Nome": "bash",
+            "Ususario": "phsecchi",
+            "Memoria": "8336 kB",
+            "Quantidade de Threads": "1"
+        },
+        {
+            "PID": "22205",
             "PPID": "2",
-            "Nome": "kworker/0:0-events",
+            "Nome": "kworker/u17:2-rb_allocator",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "20335",
+            "PID": "22385",
             "PPID": "2",
-            "Nome": "kworker/u17:1-rb_allocator",
+            "Nome": "kworker/2:2-events",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "20386",
+            "PID": "22401",
+            "PPID": "2",
+            "Nome": "kworker/0:2-events",
+            "Ususario": "root",
+            "Memoria": 0,
+            "Quantidade de Threads": "1"
+        },
+        {
+            "PID": "22437",
+            "PPID": "2",
+            "Nome": "kworker/u16:2-iwlwifi",
+            "Ususario": "root",
+            "Memoria": 0,
+            "Quantidade de Threads": "1"
+        },
+        {
+            "PID": "22491",
             "PPID": "2",
             "Nome": "kworker/u16:0-iwlwifi",
             "Ususario": "root",
@@ -1870,15 +1865,55 @@
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "21177",
-            "PPID": "5874",
-            "Nome": "bash",
-            "Ususario": "phsecchi",
-            "Memoria": "9396 kB",
+            "PID": "22550",
+            "PPID": "2",
+            "Nome": "kworker/u17:0-rb_allocator",
+            "Ususario": "root",
+            "Memoria": 0,
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "21636",
+            "PID": "22579",
+            "PPID": "2643",
+            "Nome": "python3",
+            "Ususario": "phsecchi",
+            "Memoria": "90040 kB",
+            "Quantidade de Threads": "2"
+        },
+        {
+            "PID": "22599",
+            "PPID": "3038",
+            "Nome": "sudo",
+            "Ususario": "phsecchi",
+            "Memoria": "13532 kB",
+            "Quantidade de Threads": "1"
+        },
+        {
+            "PID": "22600",
+            "PPID": "22599",
+            "Nome": "ionic",
+            "Ususario": "root",
+            "Memoria": "719336 kB",
+            "Quantidade de Threads": "11"
+        },
+        {
+            "PID": "22617",
+            "PPID": "22600",
+            "Nome": "ng run app:serv",
+            "Ususario": "root",
+            "Memoria": "43773984 kB",
+            "Quantidade de Threads": "11"
+        },
+        {
+            "PID": "22883",
+            "PPID": "2355",
+            "Nome": "Web Content",
+            "Ususario": "phsecchi",
+            "Memoria": "2417464 kB",
+            "Quantidade de Threads": "15"
+        },
+        {
+            "PID": "22967",
             "PPID": "2",
             "Nome": "kworker/u16:1-iwlwifi",
             "Ususario": "root",
@@ -1886,20 +1921,12 @@
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "21652",
+            "PID": "23004",
             "PPID": "2",
-            "Nome": "kworker/u17:0",
+            "Nome": "kworker/u16:3",
             "Ususario": "root",
             "Memoria": 0,
             "Quantidade de Threads": "1"
-        },
-        {
-            "PID": "21688",
-            "PPID": "2643",
-            "Nome": "python3",
-            "Ususario": "phsecchi",
-            "Memoria": "90024 kB",
-            "Quantidade de Threads": "2"
         }
     ]
 }
