@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import products from "./../../../../../../teste.json";
 
 @Component({
   selector: 'app-principal',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalPage implements OnInit {
   options: any;
+  public nome!: string
+
   constructor() { }
 
+  testeNome = products.nome
+
   ngOnInit(): void {
+    
     const xAxisData = [];
     const data1 = [];
     const data2 = [];
@@ -51,7 +57,12 @@ export class PrincipalPage implements OnInit {
       animationEasing: 'elasticOut',
     //  animationDelayUpdate: (idx) => idx * 5,
     };
+    console.log(typeof(products))
+    //console.log(JSON.stringify(products,null,4))
+    console.log(products.nome)
+    console.log(typeof(products.nome))
   }
+
 }
 
 
