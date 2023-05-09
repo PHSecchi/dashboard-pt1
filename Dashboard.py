@@ -4,7 +4,6 @@ import threading
 import time
 import json
 
-
 def aquisicao_dados_cpu():
     
     with open('/proc/cpuinfo', 'r') as arquivo:
@@ -107,4 +106,7 @@ def printa_dados():
 
 thr_aq_dados = threading.Thread(target= printa_dados)
 
+
 thr_aq_dados.start()
+
+
