@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import dados from "./../../../../../../Dados.json";
+import { color } from 'echarts';
 
 @Component({
   selector: 'app-principal',
@@ -34,8 +35,10 @@ export class PrincipalPage implements OnInit, OnDestroy {
 
     // initialize chart options:
     this.options = {
+      color: ['#4c8dff'],
+      backgroundColor: ['#f4f5f8'],
       title: {
-        text: 'Dynamic Data + Time Axis'
+        text: ''
       },
       tooltip: {
         trigger: 'axis',
@@ -71,6 +74,7 @@ export class PrincipalPage implements OnInit, OnDestroy {
         data: this.data
       }]
     };
+
 
     // Mock dynamic data:
     this.timer = setInterval(() => {
