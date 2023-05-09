@@ -23,7 +23,7 @@ export class PrincipalPage implements OnInit, OnDestroy {
     this.value = Math.random() * 1000;
    }
 
-  testeNome = products.teste
+  testeNome = products.nome
 
   ngOnInit(): void {
     // generate some random testing data:
@@ -102,13 +102,6 @@ export class PrincipalPage implements OnInit, OnDestroy {
         Math.round(this.value)
       ]
     };
-<<<<<<< HEAD
-    console.log(typeof(products))
-    //console.log(JSON.stringify(products,null,4))
-    //console.log(products.nome)
-    //console.log(typeof(products.nome))
-=======
->>>>>>> 63ae9931224dd63faa03713310b9f627e0661b3d
   }
 
 }

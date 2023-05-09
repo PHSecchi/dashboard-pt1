@@ -2,7 +2,6 @@ import os
 import pwd
 import threading
 import time
-import json
 
 
 def aquisicao_dados_cpu():
@@ -81,11 +80,11 @@ def printa_dados():
         # Mostra as informações na tela
         print(aquisicao_dados_cpu())
         print(aquisicao_dados_processos())
-        teste = { "nome" : "Franziska Romani Furtado","numero" : 123}
-        with open("Dados.json","w") as arquivo:
-            json.dump(teste,arquivo,indent= 4)
-        time.sleep(500)
+        time.sleep(5)
 
 thr_aq_dados = threading.Thread(target= printa_dados)
 
+
 thr_aq_dados.start()
+
+
