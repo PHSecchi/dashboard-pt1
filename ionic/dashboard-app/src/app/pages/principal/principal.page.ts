@@ -12,7 +12,7 @@ export class PrincipalPage implements OnInit {
 
   constructor() { }
 
-  testeNome = products.nome
+  testeNome = products.teste
 
   ngOnInit(): void {
     
@@ -59,8 +59,8 @@ export class PrincipalPage implements OnInit {
     };
     console.log(typeof(products))
     //console.log(JSON.stringify(products,null,4))
-    console.log(products.nome)
-    console.log(typeof(products.nome))
+    //console.log(products.nome)
+    //console.log(typeof(products.nome))
   }
 
 }
