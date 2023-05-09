@@ -6,12 +6,12 @@
         "Modelo": "Intel(R) Core(TM) i5-3320M CPU @ 2.60GHz",
         "Nucleos Fisicos": "2",
         "Nucleos Virtuais": "4",
-        "Porcentagem de Uso": 0.5
+        "Porcentagem de Uso": 14.357682619647354
     },
     "Memoria": {
         "Total": 7958836,
-        "Free": 518916,
-        "emUso": 7439920
+        "Free": 377876,
+        "emUso": 7580960
     },
     "Processos": [
         {
@@ -323,7 +323,7 @@
             "PPID": "1586",
             "Nome": "cinnamon",
             "Ususario": "phsecchi",
-            "Memoria": "4432916 kB",
+            "Memoria": "4432980 kB",
             "Quantidade de Threads": "13"
         },
         {
@@ -483,8 +483,8 @@
             "PPID": "1588",
             "Nome": "firefox-bin",
             "Ususario": "phsecchi",
-            "Memoria": "12435392 kB",
-            "Quantidade de Threads": "130"
+            "Memoria": "12434540 kB",
+            "Quantidade de Threads": "127"
         },
         {
             "PID": "2390",
@@ -555,7 +555,7 @@
             "PPID": "2355",
             "Nome": "Privileged Cont",
             "Ususario": "phsecchi",
-            "Memoria": "2475524 kB",
+            "Memoria": "2479620 kB",
             "Quantidade de Threads": "19"
         },
         {
@@ -675,7 +675,7 @@
             "PPID": "5696",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "33969000 kB",
+            "Memoria": "34000072 kB",
             "Quantidade de Threads": "15"
         },
         {
@@ -691,7 +691,7 @@
             "PPID": "5699",
             "Nome": "code",
             "Ususario": "phsecchi",
-            "Memoria": "1186845848 kB",
+            "Memoria": "1186864344 kB",
             "Quantidade de Threads": "16"
         },
         {
@@ -875,7 +875,7 @@
             "PPID": "2355",
             "Nome": "Isolated Web Co",
             "Ususario": "phsecchi",
-            "Memoria": "2790152 kB",
+            "Memoria": "2794248 kB",
             "Quantidade de Threads": "19"
         },
         {
@@ -931,7 +931,7 @@
             "PPID": "2607",
             "Nome": "bash",
             "Ususario": "phsecchi",
-            "Memoria": "8316 kB",
+            "Memoria": "9372 kB",
             "Quantidade de Threads": "1"
         },
         {
@@ -963,15 +963,15 @@
             "PPID": "2607",
             "Nome": "bash",
             "Ususario": "phsecchi",
-            "Memoria": "8688 kB",
+            "Memoria": "8888 kB",
             "Quantidade de Threads": "1"
         },
         {
-            "PID": "25443",
+            "PID": "26580",
             "PPID": "24491",
             "Nome": "python3",
             "Ususario": "phsecchi",
-            "Memoria": "90036 kB",
+            "Memoria": "90044 kB",
             "Quantidade de Threads": "2"
         }
     ]
