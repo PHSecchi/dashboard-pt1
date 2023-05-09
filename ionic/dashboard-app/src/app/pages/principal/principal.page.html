@@ -24,7 +24,7 @@
         
         <ion-item color="light">
           <ion-thumbnail slot="start">
-            <img alt="procesador" src="https://cdn-icons-png.flaticon.com/512/1373/1373613.png" />
+            <img alt="processador" src="https://cdn-icons-png.flaticon.com/512/1373/1373613.png" />
           </ion-thumbnail>
           <ion-label>Processador</ion-label>
         </ion-item>
@@ -50,35 +50,37 @@
 
     <div style="display: flex; flex-direction: column">
     <div style="display: flex; justify-content: space-between;">
-      <div style="width: 33%;">
+      <div style="padding-left: 0px; margin-left: 0px; width: 33%;">
         <!-- <div echarts [options]="options" class="demo-chart"></div> -->
         <ion-card color="light">
           <ion-card-header>
             <ion-card-title>CPU</ion-card-title>
           </ion-card-header>
-          <ion-card-content >
-          <ion-item echarts [options]="options" class="demo-chart" style="height: 300px;"></ion-item>
+          <ion-card-content>
+          <!-- <ion-item  echarts [options]="options" [theme]="theme" class="demo-chart" style="height: 300px;"></ion-item>       -->
+          <ion-item  color="light" echarts [options]="options" class="demo-chart" style="height: 300px; color: aqua;"></ion-item>
           </ion-card-content>
         </ion-card>
-
       </div>
-      <div style=" width: 33%;">
+
+      
+      <div style="padding-left: 0px; margin-left: 0px; width: 33%;">
         <ion-card color="light">
           <ion-card-header>
             <ion-card-title>Memória</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <ion-item echarts [options]="options" class="demo-chart" style="height: 300px;"></ion-item>
+            <ion-item color="light" echarts [options]="options" class="demo-chart" style="height: 300px;"></ion-item>
           </ion-card-content>
         </ion-card>
       </div>
-      <div style="  width: 33%;">
+      <div style="width: 33%;">
           <ion-card color="light">
             <ion-card-header>
               <ion-card-title>Disco</ion-card-title>
             </ion-card-header>
             <ion-card-content>
-              <ion-item echarts [options]="options" class="demo-chart" style="height: 300px;"></ion-item>
+              <ion-item color="light" echarts [options]="options" class="demo-chart" style="height: 300px;"></ion-item>
             </ion-card-content>
           </ion-card>
       </div>
@@ -87,17 +89,18 @@
 
         <ion-card style="height: 300px; overflow-y: scroll;" color="light">
           <ion-card-content color="light">
-            <ion-list color="light">
+            <!-- <ion-list color="light"> -->
+              <!-- inserir os processos aqui -->
               <ion-item color="light">
-                <ion-label>Processo 1</ion-label>
+                <ion-label>Processo</ion-label>
               </ion-item>
               <ion-item color="light">
-                <ion-label>Processo 2</ion-label>
-              </ion-item >
-              <ion-item color="light">
-                <ion-label>Processo 3</ion-label>
+                <ion-label>Processo</ion-label>
               </ion-item>
-          </ion-list>
+              <ion-item color="light">
+                <ion-label>Processo</ion-label>
+              </ion-item>
+          <!-- </ion-list> -->
           </ion-card-content>
         </ion-card>
     </div>
