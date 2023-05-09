@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import products from "./../../../../../../teste.json";
 
 @Component({
@@ -6,61 +6,102 @@ import products from "./../../../../../../teste.json";
   templateUrl: './principal.page.html',
   styleUrls: ['./principal.page.scss'],
 })
-export class PrincipalPage implements OnInit {
+export class PrincipalPage implements OnInit, OnDestroy {
   options: any;
-  public nome!: string
+  updateOptions: any;
+  public nome!: string;
+  
+  private oneDay = 24 * 3600 * 1000;
+  private now: Date;
+  private value: number;
+  private data: any[];
+  private timer: any;
 
-  constructor() { }
+  constructor() { 
+    this.data = [];
+    this.now = new Date(1997, 9, 3);
+    this.value = Math.random() * 1000;
+   }
 
   testeNome = products.nome
 
   ngOnInit(): void {
-    
-    const xAxisData = [];
-    const data1 = [];
-    const data2 = [];
+    // generate some random testing data:
 
-    for (let i = 0; i < 100; i++) {
-      xAxisData.push('category' + i);
-      data1.push((Math.sin(i / 5) * (i / 5 - 10) + i / 6) * 5);
-      data2.push((Math.cos(i / 5) * (i / 5 - 10) + i / 6) * 5);
+    for (let i = 0; i < 1000; i++) {
+      this.data.push(this.randomData());
     }
 
+    // initialize chart options:
     this.options = {
-      legend: {
-        data: ['bar', 'bar2'],
-        align: 'left',
+      title: {
+        text: 'Dynamic Data + Time Axis'
       },
-      tooltip: {},
+      tooltip: {
+        trigger: 'axis',
+        formatter: (params: any) => {
+          params = params[0];
+          const date = new Date(params.name);
+          return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+        },
+        axisPointer: {
+          animation: false
+        }
+      },
       xAxis: {
-        data: xAxisData,
-        silent: false,
+        type: 'time',
         splitLine: {
-          show: false,
-        },
+          show: false
+        }
       },
-      yAxis: {},
-      series: [
-        {
-          name: 'bar',
-          type: 'bar',
-          data: data1,
-          //animationDelay: (idx) => idx * 10,
+      yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%'],
+        splitLine: {
+          show: false
+        }
+      },
+      series: [{
+        name: 'Mocking Data',
+        type: 'line',
+        showSymbol: false,
+        emphasis: {
+          line: false,
         },
-        {
-          name: 'bar2',
-          type: 'bar',
-          data: data2,
-         // animationDelay: (idx) => idx * 10 + 100,
-        },
-      ],
-      animationEasing: 'elasticOut',
-    //  animationDelayUpdate: (idx) => idx * 5,
+        data: this.data
+      }]
     };
-    console.log(typeof(products))
-    //console.log(JSON.stringify(products,null,4))
-    console.log(products.nome)
-    console.log(typeof(products.nome))
+
+    // Mock dynamic data:
+    this.timer = setInterval(() => {
+      for (let i = 0; i < 5; i++) {
+        this.data.shift();
+        this.data.push(this.randomData());
+      }
+
+      // update series data:
+      this.updateOptions = {
+        series: [{
+          data: this.data
+        }]
+      };
+    }, 1000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.timer);
+  }
+
+  randomData() {
+    this.now = new Date(this.now.getTime() + this.oneDay);
+    this.value = this.value + Math.random() * 21 - 10;
+    return {
+      name: this.now.toString(),
+      value: [
+        [this.now.getFullYear(), this.now.getMonth() + 1, this.now.getDate()].join('/'),
+        Math.round(this.value)
+      ]
+    };
   }
 
 }
