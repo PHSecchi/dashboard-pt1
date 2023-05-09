@@ -6,7 +6,7 @@ import json
 
 
 def aquisicao_dados_cpu():
-    dados_CPU = ""
+    
     with open('/proc/cpuinfo', 'r') as arquivo:
         info_CPU = arquivo.readlines()
 
@@ -15,13 +15,15 @@ def aquisicao_dados_cpu():
         cores = info_CPU[12].split('\t')[1].split(' ')[1].strip()
         threads = info_CPU[10].split('\t')[1].split(' ')[1].strip()
 
-        cpu = f"Modelo: {modelo} Nucleos Fisicos: {cores} Nucleos Virtuais: {threads}\n"
-
-        dados_CPU += cpu
+        cpu = {"Modelo": modelo,
+               "Nucleos Fisicos": cores,
+               "Nucleos Virtuais" : threads }
+        dados_CPU = { "CPU" : cpu}
+       
  
     CPU_stat = []
     i=0
-
+    t_cpu = []
     #Carrega as informacoes sobre o tempo do processador
     with open('/proc/stat', 'r') as arquivo:
         while i < int(threads) + 1 :
@@ -29,16 +31,27 @@ def aquisicao_dados_cpu():
             j=0
             if i == 0:
                 j=1 
-            t_cpu = []
+            tempos = []
             k = 1
-            while k < 10:
-                t_cpu.append(CPU_stat[i].split(' ')[k+j])
+            while k < 11:
+                tempos.append(CPU_stat[i].split(' ')[k+j])
                 k += 1
 
-            dados_CPU += CPU_stat[i]
+            t_cpu.append({"t_user1":tempos[0],
+                          "t_user2":tempos[1],
+                          "t_system":tempos[2],
+                          "t_ocioso":tempos[3],
+                          "t_i/o_wait":tempos[4],
+                          "t_inthard":tempos[5],
+                          "t_intsoft":tempos[6],
+                          "t_virt":tempos[7],
+                          "t_virt1cpu":tempos[8],
+                          "t_energ":tempos[9]})
             i += 1
-    
-    return dados_CPU
+
+    dados_CPU = { "info_CPU" : cpu,
+                 "times_CPU": t_cpu}
+    return dados_CPU 
  
 
 def aquisicao_dados_processos():
@@ -48,8 +61,7 @@ def aquisicao_dados_processos():
         if p.isdigit():
             processos.append(p)
 
-    dados_processos = ""
-
+    proc = []
     #Abre o arquivo "status" de todos os processos e retira as informacoes necessaria 
     for id_proc in processos:
         with open(f"/proc/{id_proc}/status", 'r') as arquivo:
@@ -72,18 +84,25 @@ def aquisicao_dados_processos():
         user = pwd.getpwuid(int(uid)).pw_name
 
         #Monta uma string e concatena com as informacoes dos demais processos
-        proc = f"PID: {pid} PPID: {ppid} Nome: {name} Ususario: {user} Uso de memória: {memo} Quantidade de Threads: {trd}\n"
-        dados_processos += proc
+        proc.append ({"PID": pid,
+                      "PPID": ppid,
+                      "Nome": name,
+                      "Ususario": user, 
+                      "Memoria": memo,
+                      "Quantidade de Threads": trd})
 
-    return dados_processos
+    return proc
+
 def printa_dados():
     while True: 
+        Dados = {"CPU":aquisicao_dados_cpu(),
+                 "Processos":aquisicao_dados_processos()}
         # Mostra as informações na tela
-        print(aquisicao_dados_cpu())
-        print(aquisicao_dados_processos())
-        teste = { "nome" : "Franziska Romani Furtado","numero" : 123}
+        #print(aquisicao_dados_processos())
+        #print(aquisicao_dados_cpu())
+        
         with open("Dados.json","w") as arquivo:
-            json.dump(teste,arquivo,indent= 4)
+            json.dump(Dados,arquivo,indent= 4)
         time.sleep(500)
 
 thr_aq_dados = threading.Thread(target= printa_dados)
