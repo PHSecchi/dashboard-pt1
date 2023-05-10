@@ -6,10 +6,13 @@
       <ion-card-title>Dashboard</ion-card-title>
       <ion-card-subtitle>Gerenciador de processos e desempenho</ion-card-subtitle>
     </ion-card-header>
-  <ion-card-content>
-
-    <!-- Propriedades -->
-    <ion-card color="light" style="height: 400px;">
+    <ion-card-content>
+      
+      <!-- Propriedades -->
+      <div style="display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: space-between;">
+    <div style="width: 65%;">
+    <ion-card color="light" style="height: 275px;">
       <ion-card-header style="width: 100%;">
         <ion-card-title>Propriedades</ion-card-title>
       </ion-card-header>     
@@ -26,7 +29,7 @@
           <ion-thumbnail slot="start">
             <img alt="processador" src="https://cdn-icons-png.flaticon.com/512/1373/1373613.png" />
           </ion-thumbnail>
-          <ion-label>Processador</ion-label>
+          <ion-label>{{infoCPU.CPU}} <br> {{infoCPU.Nucleo}}</ion-label>
         </ion-item>
 
         
@@ -34,23 +37,21 @@
           <ion-thumbnail slot="start">
             <img alt="RAM" src="https://cdn-icons-png.flaticon.com/512/1689/1689137.png" />
           </ion-thumbnail>
-          <ion-label>RAM</ion-label>
+          <ion-label>{{infoMem.Memoria}}</ion-label>
         </ion-item>
-
-        
-        <ion-item color="light">
-          <ion-thumbnail slot="start">
-            <img alt="sistema" src="https://cdn-icons-png.flaticon.com/512/150/150332.png" />
-          </ion-thumbnail>
-          <ion-label>Sistema Operacional</ion-label>
-        </ion-item>
-
-      </ion-card-content>
-    </ion-card>
-
-    <div style="display: flex; flex-direction: column">
-    <div style="display: flex; justify-content: space-between;">
-      <div style="padding-left: 0px; margin-left: 0px; width: 33%;">
+        <!--
+          <ion-item color="light">
+            <ion-thumbnail slot="start">
+              <img alt="sistema" src="https://cdn-icons-png.flaticon.com/512/150/150332.png" />
+            </ion-thumbnail>
+            <ion-label>Sistema Operacional</ion-label>
+          </ion-item>-->
+          
+        </ion-card-content>
+      </ion-card>
+    </div>
+      
+      <div style="padding-left: 0px; margin-left: 0px; width: 35%;">
         <!-- <div echarts [options]="options" class="demo-chart"></div> -->
         <ion-card color="light">
           <ion-card-header>
@@ -62,8 +63,9 @@
           </ion-card-content>
         </ion-card>
       </div>
+    </div>
 
-      
+      <!--
       <div style="padding-left: 0px; margin-left: 0px; width: 33%;">
         <ion-card color="light">
           <ion-card-header>
@@ -85,23 +87,25 @@
           </ion-card>
       </div>
     </div>
+  -->  
     <div style="width:100%">
 
         <ion-card style="height: 300px; overflow-y: scroll;" color="light">
+          <ion-card-header>
+          <ion-card-title>     Processos</ion-card-title>
           <ion-card-content color="light">
-            <!-- <ion-list color="light"> -->
               <!-- inserir os processos aqui -->
-              <ion-item color="light">
-                <ion-label>Processo</ion-label>
-              </ion-item>
-              <ion-item color="light">
-                <ion-label>Processo</ion-label>
-              </ion-item>
-              <ion-item color="light">
-                <ion-label>Processo</ion-label>
-              </ion-item>
+                <ion-item *ngFor="let Processo of infoProc" color="light" lines="full">
+                   <ion-label>Nome :{{Processo.Processo.Nome}}</ion-label>
+                   <ion-label>PID :{{Processo.Processo.PID}}</ion-label>
+                   <ion-label>PPID :{{Processo.Processo.PPID}}</ion-label>
+                   <ion-label>Ususario :{{Processo.Processo.Ususario}}</ion-label>
+                   <ion-label>Memoria :{{Processo.Processo.Memoria}}</ion-label>
+                   <ion-label>Threads :{{Processo.Processo.QuanThr}}</ion-label>
+                </ion-item>
           <!-- </ion-list> -->
           </ion-card-content>
+        </ion-card-header>
         </ion-card>
     </div>
   </div>

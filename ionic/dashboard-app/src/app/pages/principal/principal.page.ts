@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import dados from "./../../../../../../Dados.json";
+
 import { color } from 'echarts';
 
 @Component({
@@ -10,25 +11,27 @@ import { color } from 'echarts';
 export class PrincipalPage implements OnInit, OnDestroy {
   options: any;
   updateOptions: any;
-  public nome!: string;
   
   private oneDay = 24 * 3600 * 1000;
   private now: Date;
   private value: number;
   private data: any[];
   private timer: any;
-
+  
   constructor() { 
     this.data = [];
     this.now = new Date(1997, 9, 3);
     this.value = Math.random() * 1000;
-   }
-
+  }
+  
   hostname = dados.Hostname.Hostname
-
+  infoCPU = dados.CPU
+  infoProc = dados.Processos
+  infoMem  = dados.Memoria
+  
   ngOnInit(): void {
     // generate some random testing data:
-
+    
     for (let i = 0; i < 1000; i++) {
       this.data.push(this.randomData());
     }
@@ -80,9 +83,11 @@ export class PrincipalPage implements OnInit, OnDestroy {
     this.timer = setInterval(() => {
       for (let i = 0; i < 5; i++) {
         this.data.shift();
-        this.data.push(this.randomData());
+        this.data.push(this.infoCPU.Percent);
       }
-
+      this.hostname = dados.Hostname.Hostname
+      this.infoCPU = dados.CPU
+      this.infoProc = dados.Processos
       // update series data:
       this.updateOptions = {
         series: [{

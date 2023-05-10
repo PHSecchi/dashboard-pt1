@@ -23,11 +23,11 @@ def aquisicao_dados_memo():
                 memo_free = int (m.split()[1])
     
     memo_uso = memo_total-memo_free
-
-    return{"Total": memo_total,
-           "Free" : memo_free,
-           "emUso": memo_uso
-            }
+    memo_total = round (memo_total / 1000000,3)
+    memo_uso = round (memo_uso / 1000000, 3)
+    
+    memo = "Memoria em uso: " + str(memo_uso) +" Gb        Memoria Total: "+ str(memo_total) +" Gb"
+    return {"Memoria": memo}
 
 def aquisicao_dados_cpu():
     
@@ -69,11 +69,10 @@ def aquisicao_dados_cpu():
 
         #Calcula a porcentagem de uso do procesador (tempo de processamento / tempo total * 100)
         percent = ((t_cpu2total - t_cpu2[3])-(t_cpu1total - t_cpu1[3])) / (t_cpu2total - t_cpu1total) * 100
-
-    return {"Modelo": modelo,
-            "Nucleos Fisicos": cores,
-            "Nucleos Virtuais" : threads,
-            "Porcentagem de Uso": percent }
+    nucleo ="Nucleos Fisicos: "+  cores +"  Nucleos Virtuais: "+ threads
+    return {"CPU": modelo,
+            "Nucleo": nucleo,
+            "Percent": round (percent, 2) }
  
 
 def aquisicao_dados_processos():
@@ -110,20 +109,21 @@ def aquisicao_dados_processos():
         #Caso o processo pertenca ao usuario, o processo e adicionado na lista
         if loginuid == uid :
             user = pwd.getpwuid(uid).pw_name
-            proc.append ({"PID": pid,
+            processo = {"PID": pid,
                           "PPID": ppid,
                           "Nome": name,
                           "Ususario": user, 
                           "Memoria": memo,
-                          "Quantidade de Threads": trd})
+                          "QuanThr": trd}
+            proc.append ({"Processo": processo})
 
     return proc
 
 def grava_dados():
     while True:
         Dados = {"Hostname": aquisicao_hostname(),
-                 "CPU":aquisicao_dados_cpu(),
                  "Memoria": aquisicao_dados_memo(),
+                 "CPU":aquisicao_dados_cpu(),
                  "Processos":aquisicao_dados_processos()}
         #Escreve Dados em um arquivo JSON       
         with open("Dados.json","w") as arquivo:
