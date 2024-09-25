@@ -1,14 +1,17 @@
-#Dashboard Parte 1
-Este projeto foi desenvolvido na matéria de  Sistemas operacionais do curso de Sistemas de Informação, da Universidade Tecnológica Federarl do Paraná, campus Curitiba.
 
-O projeto trata-se de um dashboard para verificação de alguns status do sistema Operacional Debian que é baseado em Linux
+# Dashboard - Parte 1
 
-O software *Dashboard.py* acessa os arquivos da pasta /proc onde estão as informações dos sistemas e coleta e trata as informações de:
-- Nome da máquina
-- Dados de memória (uso e total)
-- Processador (nome, cores, threads e uso)
-- Informações de Processos (PID, PPID, usuário e memoria).
+Este projeto foi desenvolvido na disciplina de Sistemas Operacionais do curso de Sistemas de Informação, da Universidade Tecnológica Federal do Paraná, campus Curitiba.
 
-Após isso feito é criado um arquivo JSON com as respectivas chaves e valores.
+O projeto consiste em um *dashboard* para monitoramento de alguns status do sistema operacional Debian, que é baseado em Linux.
 
-Por fim o front end criado em IONIC verifica as informações e apresenta em tela. 
+O software *Dashboard.py* acessa os arquivos da pasta `/proc`, onde estão armazenadas as informações do sistema, e coleta os seguintes dados:
+
+- Nome da máquina;
+- Dados de memória (uso e total);
+- Processador (nome, núcleos, *threads* e uso);
+- Informações de processos (PID, PPID, usuário e memória).
+
+Após a coleta, é gerado um arquivo JSON contendo as respectivas chaves e valores.
+
+Por fim, o front-end, desenvolvido em IONIC, exibe as informações na tela.
